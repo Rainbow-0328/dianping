@@ -97,7 +97,7 @@ public class CacheClient {
         String shopJson = stringRedisTemplate.opsForValue().get(keyPrefix + id);
         // 2 . 判断是否存在
         if (StrUtil.isBlank(shopJson)) {
-            if("111111hot-fixmaster".equals(shopJson)){
+            if("".equals(shopJson)){
                 return null;
             }
             // 如果是空,证明访问的是非热点key,以带TTL的方式进行缓存,解决缓存穿透
